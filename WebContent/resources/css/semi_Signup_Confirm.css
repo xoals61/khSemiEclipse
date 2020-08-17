@@ -1,0 +1,31 @@
+#signUpCompleate{
+    min-width: 1000px;
+
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin: auto;
+    float: left;
+}
+
+#complete{
+    width: fit-content;
+    height: 300px;
+    text-align: center;
+    margin: auto;
+}
+
+#complete div{
+    display: inline-block;
+    
+    margin-top: 10px;
+    height:200px;
+}
+
+.complete>div{
+    
+}
+
+.signuplogo img{
+    margin-right: 60px;
+}
