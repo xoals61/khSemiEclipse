@@ -22,6 +22,28 @@ public class MemberService {
 		}else {
 			rollback(conn);
 		}
+		close(conn);
+		return result;
+	}
+	public int chkId(String id) {
+		int result = 0;
+		
+		conn = getConnection();
+		
+		result = mDao.chkId(conn,id);
+		
+		close(conn);
+		
+		return result;
+	}
+	public Member memberLogin(Member m) {
+		Member result = null;
+		conn = getConnection();
+		
+		result = mDao.memberLogin(conn,m);
+		
+		close(conn);
+		
 		return result;
 	}
 	

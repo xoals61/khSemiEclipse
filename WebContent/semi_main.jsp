@@ -1,3 +1,6 @@
+<%@page import="com.kh.semi.model.vo.Member"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -85,7 +88,7 @@
            
             </script>
 
-
+<%Member m = (Member)session.getAttribute("member"); %>
 
 
 </head>
@@ -98,9 +101,17 @@
 				<li><a href="#">기능사</a></li>
             </ul>
             <ul id='BeforeLogin' class="main-header-login">
-                <li><a href="/#">로그인</a></li>
-                <li><span>|</span><a href="semi_SignupForm.html">회원가입</a></li>
+            <%if(m == null) {%>
+                <li><a href="view/semi_Login.jsp">로그인</a></li>
+                <li><span>|</span><a href="view/semi_SignupForm.jsp">회원가입</a></li>
                 <li><span>|</span><a href="/#">고객센터</a></li>
+            <%}else{ %>
+            	<li><a><%=m.getUserName()%>님</a></li>
+            	<li><span>|</span><a href="logOut.do">로그아웃</a></li>
+                <li><span>|</span><a href="/#">마이페이지</a></li>
+            	
+            
+            <%} %>
 			</ul>
            
             <ul id='search' class="main-header-search">

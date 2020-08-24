@@ -9,20 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.semi.model.vo.Member;
 import com.kh.semi.service.MemberService;
 
 /**
- * Servlet implementation class signUpServlet
+ * Servlet implementation class MemberIdCheckServlet
  */
-@WebServlet("/signup.do")
-public class signUpServlet extends HttpServlet {
+@WebServlet("/MemberIdCheckAction.do")
+public class MemberIdCheckServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public signUpServlet() {
+    public MemberIdCheckServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,46 +30,23 @@ public class signUpServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String userId = request.getParameter("id");
-		String userPwd = request.getParameter("password");
-		String userName = request.getParameter("name");
-		String email = request.getParameter("email");
-		String address = request.getParameter("address1") + request.getParameter("address2");
+		String id = request.getParameter("id");
 		
-		Member m = new Member(userId,userPwd,userName,email,address);
+		System.out.println(id);
 		
 		MemberService ms = new MemberService();
-		int result = ms.MemberSignUp(m);
 		
-		if(result>0) {
-			response.sendRedirect("view/semi_SignUpConfirm.jsp");
-			
-			
-		}else {
-			PrintWriter out=response.getWriter(); //getWriter() 출력스트림. 응답할 정보를 갖고 있는 객체에 출력스트림을 써서 out 객체에 담았다.
-
-			
-
-			out.println("<html>");
-			out.println("<body>");
-
-			out.println("</body>");
-
-			out.println("</html>");
-
-			out.println("<script>");
-
-			out.println("alert('회원가입 실패');");
-
-			out.println("history.back();");
-
-			out.println("</script>");
-
-		}
+		int result = ms.chkId(id);
 		
+//		System.out.println(result);
+//		request.getRequestDispatcher("view/IdCheckForm.jsp").forward(request, response);
+		response.setContentType("text/html;charset=euc-kr");
+		PrintWriter out = response.getWriter();
+		System.out.println(result);
+		if(result != 0)	out.println("0"); // ���̵� �ߺ�
+		else		out.println("1");
 		
-		
-		
+		out.close();
 	}
 
 	/**

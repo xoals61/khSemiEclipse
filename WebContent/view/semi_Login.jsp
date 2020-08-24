@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html;charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
@@ -33,7 +33,6 @@
         </div>
   
     <div id="main-box1"></div>
-<!--  gd-->
 
     <div class="left-menu">
     <ul id="left-menu-share" class="left-menu1">
@@ -82,10 +81,10 @@
     <h3 style="font-size: 30px; margin: 30px 20px 0 0; z-index: 3;">로그인</h3>
     <div class="login-page">
         <div class="form">
-          <form class="login-form">
-            <input type="text" placeholder="username"/>
-            <input type="password" placeholder="password"/>
-            <button type="button">login</button>
+          <form class="login-form" action="${pageContext.request.contextPath}/memberLogin.do" method="POST">
+            <input type="text" placeholder="username" name="id"/>
+            <input type="password" placeholder="password" name="password"/>
+            <button type="submit">login</button>
             <p class="message">Not registered? <a href="#">Create an account</a></p>
             <p class="message">Are you Forget? <a href="#">Find ID/PWD</a></p>
           </form>
