@@ -1,16 +1,46 @@
-@font-face {
-    font-family: 'BMDOHYEON';
-    src: url(BMDOHYEON_ttf.ttf) format('truetype');
-   }
-   
+    @font-face {
+    font-family: '나눔1';
+    src: url(NanumBarunGothicBold.ttf) format('truetype');
+    }
+    @font-face {
+        font-family: '나눔2';
+        src: url(NanumBarunGothic.ttf) format('truetype');
+       }
+    
+    @font-face {
+    font-family: '나눔3';
+    src: url(NanumBarunGothicLight.ttf) format('truetype');
+    }
+    @font-face {
+    font-family: '나눔4';
+    src: url(NanumBarunGothicUltraLight.ttf) format('truetype');
+    }
+    
+    
+    .Nanum1{
+        font-family: '나눔1';
+    }
 
+    .Nanum2{
+        font-family: '나눔2';
+    }
+
+    .Nanum3{
+        font-family: '나눔3';
+    }
+
+    .Nanum4{
+        font-family: '나눔4';
+    }
+    
+    
 
 /*---------------------------------------------header---------------------------------------------------*/
 
 a{text-decoration: none;}
 li{list-style: none;}
 
-body{ margin: 0 auto; max-width: 1400px;min-width: 1400px;font-family:BMDOHYEON, NanumGothic, Dotum,"돋움",Gulim,"굴림",Verdana,Tahoma,Apple Gothic,sans-serif,UnDotum; font-size:12px !important; }
+body{ margin: 0 auto; max-width: 1400px;min-width: 1400px; font-family: '나눔2'; font-size:12px !important; }
 
 
 
@@ -19,12 +49,12 @@ body{ margin: 0 auto; max-width: 1400px;min-width: 1400px;font-family:BMDOHYEON,
 .main-header-logo img{height: 100px; width: 170px; }
 .main-header-navi{float:right; left: 250px; margin-top: 60px;position: relative; min-width:700px;padding-top: 50px; margin-right: 120px;}
 .main-header-navi li{float:left; padding:0 140px 0 0px; line-height:31px;}
-.main-header-navi li a{font-size:40px; color:#418dc0; font-weight:600;}
+.main-header-navi li a{font-size:40px; color:#418dc0; font-family: '나눔1';  }
 .main-header-navi li a:hover{color : #112463; text-decoration:none;}
 
 
 .main-header-login                 {float: right;overflow: hidden;max-width: 500px;}
-.main-header-login li a            {color:#000000; font-size: 12pt; font-weight:400;}
+.main-header-login li a            {color:#000000; font-size: 12pt;font-family: '나눔4';}
 .main-header-login li a:hover      {color:rgb(64, 64, 65); font-weight:300;}
 .main-header-login li span         {padding:0 5px;}
 .main-header-login li{float:left;}
