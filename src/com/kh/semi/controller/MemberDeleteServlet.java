@@ -44,9 +44,9 @@ public class MemberDeleteServlet extends HttpServlet {
 		
 		MemberService ms = new MemberService();
 		try {
-			if(!(userId.equals(userId2)   ||
-				userPWd.equals(userPWd2)  ||
-				username.equals(username2)||
+			if(!(userId.equals(userId2)   &&
+				userPWd.equals(userPWd2)  &&
+				username.equals(username2)&&
 				useremail.equals(useremail2))) {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer = response.getWriter();
